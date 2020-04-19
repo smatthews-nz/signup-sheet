@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Grid from '@material-ui/core/Grid';
-// import Paper from '@material-ui/core/Paper';
+
 
 const useStyles = makeStyles((theme) => ({
     
@@ -26,12 +26,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
         marginLeft: theme.spacing(2)
-      },
-      paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-      },
+      }
     
   }));
 
