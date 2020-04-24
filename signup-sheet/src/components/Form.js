@@ -1,35 +1,52 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-const theme = createMuiTheme();
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '75vw',
+      },
     },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-      marginRight: theme.spacing(2),
-      marginLeft: theme.spacing(2)
-    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+      },
+      selectEmpty: {
+        marginTop: theme.spacing(2),
+      },
   }));
+  
+function Form() {
 
-function Form(){
     const classes = useStyles();
 
     return(
-    <div>
-        <Grid container spacing={3}>
-            <Grid item xs={12}>
-                <Paper className={classes.paper}></Paper>
-                {/* <Label>Full Name</Label> */}
-            </Grid>
-        </Grid>
-    </div>);
+        <div className="form-holder">
+            <form className={classes.root} noValidate autoComplete="off">
+            <TextField id="outlined-basic" label="Full Name" variant="outlined" />
+            <TextField id="outlined-basic" label="Occupation" variant="outlined" />
+            <FormControl className={classes.formControl}>
+                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                >
+                <MenuItem value={10}>Male</MenuItem>
+                <MenuItem value={20}>Female</MenuItem>
+                <MenuItem value={30}>Non-binary</MenuItem>
+                <MenuItem value={30}>Prefer not to say</MenuItem>
+                </Select>
+            </FormControl>
+            </form>
+        </div>
+    )
 }
 
 export default Form;

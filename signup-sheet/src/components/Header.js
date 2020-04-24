@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         marginLeft: theme.spacing(2)
       }
-    
   }));
 
 function Header(){
