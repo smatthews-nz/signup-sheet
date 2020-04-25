@@ -5,6 +5,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,8 +32,10 @@ function Form() {
     return(
         <div className="form-holder">
             <form className={classes.root} noValidate autoComplete="off">
+                {/* //Name and occupation section */}
             <TextField id="outlined-basic" label="Full Name" variant="outlined" />
             <TextField id="outlined-basic" label="Occupation" variant="outlined" />
+                {/* //Gender dropdown */}
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">Gender</InputLabel>
                 <Select
@@ -44,6 +48,20 @@ function Form() {
                 <MenuItem value={30}>Prefer not to say</MenuItem>
                 </Select>
             </FormControl>
+            {/* // class switches */}
+            <FormControlLabel
+                control={<Switch name="react-fundamentals" />}
+                label="React fundamentals - 10am"
+            />
+            <FormControlLabel
+                control={<Switch name="node-email-techniques" />}
+                label="Node.js email techniques - 11am"
+            />
+            <FormControlLabel
+                control={<Switch name="vue-fundamentals" />}
+                label="Vue fundamentals - 10am"
+            />
+
             </form>
         </div>
     )
