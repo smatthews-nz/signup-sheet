@@ -7,6 +7,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import Button from '@material-ui/core/Button';
+import SendIcon from '@material-ui/icons/Send';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
       },
       selectEmpty: {
         marginTop: theme.spacing(2),
+      },
+    margin: {
+        margin: theme.spacing(1),
       },
   }));
   
@@ -62,7 +67,26 @@ function Form() {
                 label="Vue fundamentals - 10am"
             />
 
+            {/*Multi line form */}
+            <TextField
+            id="outlined-multiline-static"
+            label="Comments"
+            multiline
+            rows={4}
+            placeholder="Add any other comments here"
+            variant="outlined"
+            />
+
             </form>
+            {/*submit button */}
+            <Button 
+            variant="contained" 
+            size="large" 
+            color="primary" 
+            className={classes.margin} 
+            endIcon={<SendIcon />}>
+            Send registration
+            </Button>
         </div>
     )
 }
